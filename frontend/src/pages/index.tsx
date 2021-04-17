@@ -1,16 +1,16 @@
 import { NextComponentType } from 'next'
-import Head from 'next/head'
-
 import styled from 'styled-components'
+import useDarkMode from 'use-dark-mode'
 
 const Home: NextComponentType = () => {
+  const darkMode = useDarkMode()
+
   return (
     <Test>
-      <Head>
-        <title>Create Next App</title>
-        <link rel='icon' href='/favicon.ico' />
-      </Head>
-      <div>zup biatch</div>
+      yo!
+      <div>
+        <button onClick={darkMode.toggle}>Toggle DarkMode</button>
+      </div>
     </Test>
   )
 }
