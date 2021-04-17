@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  database:
+    container_name: koy_database
+    image: postgres:latest
+    environment:
+      - POSTGRES_USER=koy
+      - POSTGRES_PASSWORD=secret
+      - POSTGRES_DB=koy
+    restart: always
+    ports:
+      - 5566:5432
+    # expose:
+    #   - 5566
+#     networks:
+#       - koy_backend
+# networks:
+#   koy_frontend:
+#     name: koy_frontend
+#   koy_backend:
+#     name: koy_backend
