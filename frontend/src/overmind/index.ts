@@ -1,20 +1,25 @@
-import { IAction, IConfig } from 'overmind'
+import { IAction, IConfig, IOnInitialize } from 'overmind'
 import {
   createStateHook,
   createActionsHook,
   createEffectsHook,
   createReactionHook,
 } from 'overmind-react'
+import { merge, namespaced } from 'overmind/config'
 
-import { state } from './state'
-import * as actions from './actions'
+import * as app from './app'
+import * as user from './user'
 
-export const config = {
-  state,
-  actions,
-}
+export const config = merge(
+  app,
+  namespaced({
+    user,
+  }),
+)
 
 export interface Config extends IConfig<typeof config> {}
+
+export interface OnInitialize extends IOnInitialize<Config> {}
 
 export interface Action<Input = void, Output = void>
   extends IAction<Config, Input, Output> {}
