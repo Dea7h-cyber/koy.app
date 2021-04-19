@@ -60,7 +60,7 @@ const Header = styled.div`
 `
 
 const Centered = styled.div`
-  margin-top: 25px;
+  margin: 25px 0;
   display: flex;
   justify-content: center;
 `
@@ -68,6 +68,11 @@ const Centered = styled.div`
 const MiddleWrapper = styled.div`
   max-width: 935px;
   width: 100%;
+
+  @media (max-width: 1000px) {
+    display: flex;
+    justify-content: center;
+  }
 `
 
 const Content = styled.div`
@@ -75,6 +80,7 @@ const Content = styled.div`
   max-width: 614px;
   width: 100%;
   float: left;
+  background-color: rgba(158, 86, 86, 0.103);
 `
 
 const SideFooter = styled.footer`
@@ -83,6 +89,10 @@ const SideFooter = styled.footer`
   right: calc((100vw - 935px) / 2);
   width: 293px;
   background-color: rgba(124, 124, 124, 0.103);
+
+  @media (max-width: 1000px) {
+    display: none;
+  }
 `
 
 const Logo = styled.div`

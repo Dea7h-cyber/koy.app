@@ -1,7 +1,7 @@
 import { OnInitialize } from '../'
 
 export const onInitialize: OnInitialize = async ({ actions, effects }) => {
-  effects.gql.initialize({
+  effects.user.gql.initialize({
     endpoint: 'http://localhost:5000/graphql',
     // This runs on every request
     headers: () => ({
@@ -13,6 +13,4 @@ export const onInitialize: OnInitialize = async ({ actions, effects }) => {
       mode: 'cors',
     },
   })
-
-  actions.setLoading(false)
 }

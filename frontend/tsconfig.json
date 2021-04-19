@@ -24,8 +24,8 @@
   "include": [
     "./src/**/*.ts",
     "./src/**/*.tsx",
-    "./src/typings/next-env.d.ts",
-    "./src/typings/styled.d.ts"
+    "./src/typings/styled.d.ts",
+    "./next-env.d.ts"
   ],
   "exclude": ["node_modules"]
 }

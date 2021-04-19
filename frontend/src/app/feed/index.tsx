@@ -1,7 +1,18 @@
+import { useActions, useEffects } from '@/overmind'
 import styled from 'styled-components'
 
 export const Feed: React.FC = () => {
-  return <Wrapper>feed</Wrapper>
+  const { getPosts } = useActions().user
+
+  return (
+    <Wrapper>
+      feed
+      <div>yo</div>
+      <div>
+        <button onClick={() => getPosts()}>click me</button>
+      </div>
+    </Wrapper>
+  )
 }
 
 const Wrapper = styled.div`
