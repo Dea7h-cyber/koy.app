@@ -6,9 +6,10 @@
   "private": true,
   "license": "MIT",
   "scripts": {
+    "prestart": "yarn build",
     "build": "next build",
-    "start": "next start",
-    "start:dev": "next dev"
+    "start": "next start -p 80",
+    "dev": "next dev"
   },
   "dependencies": {
     "graphql": "^15.5.0",

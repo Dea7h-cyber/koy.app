@@ -1,5 +1,5 @@
 import { ArgsType, Field } from '@nestjs/graphql'
-import { IsInt, IsNotEmpty, IsOptional } from 'class-validator'
+import { IsInt, IsNotEmpty } from 'class-validator'
 
 @ArgsType()
 export class GetUserArgs {
@@ -10,8 +10,7 @@ export class GetUserArgs {
 
 @ArgsType()
 export class GetUsersArgs {
-  @Field()
+  @Field({ nullable: true })
   @IsInt()
-  @IsOptional()
   page: number = 1
 }

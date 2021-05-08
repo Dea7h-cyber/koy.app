@@ -13,8 +13,8 @@ import { UsersModule } from './users/users.module'
       inject: [ConfigService],
       useFactory: (config: ConfigService) => ({
         cors: { origin: config.get('origin') },
-        debug: config.get('NODE_ENV') === 'dev',
-        playground: config.get('NODE_ENV') === 'dev',
+        debug: config.get('ENV') !== 'prod',
+        playground: config.get('ENV') !== 'prod',
         autoSchemaFile: true,
       }),
     }),

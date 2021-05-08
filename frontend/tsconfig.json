@@ -21,11 +21,6 @@
       "*": ["node_modules/*"]
     }
   },
-  "include": [
-    "./src/**/*.ts",
-    "./src/**/*.tsx",
-    "./src/typings/styled.d.ts",
-    "./next-env.d.ts"
-  ],
+  "include": ["src", "next-env.d.ts"],
   "exclude": ["node_modules"]
 }

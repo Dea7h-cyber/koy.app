@@ -6,9 +6,12 @@ async function bootstrap() {
   const app = await NestFactory.create(RootModule)
   const config = app.get(ConfigService)
   app.enableCors({ origin: config.get('origin'), credentials: true })
+  app.useLogger(
+    config.get('ENV') !== 'prod' ? ['debug', 'error', 'log', 'verbose', 'warn'] : ['error', 'warn'],
+  )
 
-  await app.listen(5000)
+  await app.listen(config.get('PORT') ?? 5000)
 
-  console.log(`\nServer running at ${await app.getUrl()}\n`)
+  console.log(`\n- SERVER STARTED AT ${await app.getUrl()} -\n`)
 }
 bootstrap()
