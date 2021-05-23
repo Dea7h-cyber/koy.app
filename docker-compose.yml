@@ -11,7 +11,7 @@ services:
     networks:
       - koy_frontend
       - koy_backend
-    restart: unless-stopped
+    restart: always
     depends_on:
       - koy_frontend
   koy_frontend:
@@ -21,7 +21,7 @@ services:
       dockerfile: Dockerfile
     networks:
       - koy_frontend
-    restart: unless-stopped
+    restart: always
     depends_on:
       - koy_backend
   koy_backend:
@@ -29,7 +29,7 @@ services:
     build:
       context: backend
       dockerfile: Dockerfile
-    restart: unless-stopped
+    restart: always
     depends_on:
       - koy_database
     networks:
@@ -40,7 +40,7 @@ services:
     image: postgres:latest
     env_file:
       - .env
-    restart: unless-stopped
+    restart: always
     volumes:
       - pgdata:/var/lib/postgresql/data
     networks:
