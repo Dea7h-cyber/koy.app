@@ -1,5 +1,5 @@
 export type AppState = {
   title: string
   loading: boolean
-  darkMode: boolean
+  darkMode: boolean | null
 }
